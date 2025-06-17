@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- holds A-Frame and AR.js -->
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    </head>
+    <body style="margin: 0; overflow: hidden;">
+        <!-- starts the AR view -->
+        <a-scene
+            embedded
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            vr-mode-ui="enabled: false;"
+        >
+            <!-- listens for the Hiro marker -->
+            <a-marker preset="hiro">
+                <!-- makes its children visible when detected -->
+                <a-box position="0 0.5 0" material="color: blue;"></a-box>
+            </a-marker>
+            <!-- AR.js updating the camera pose -->
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
